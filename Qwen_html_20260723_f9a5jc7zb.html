@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>方位词 (HSK1) - Рабочая тетрадь</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+            background: white;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm 25mm;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        /* Обложка */
+        .cover {
+            background: linear-gradient(135deg, #7a4a9e 0%, #a36bc9 100%);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30mm 25mm;
+        }
+        
+        .cover h1 {
+            font-size: 36pt;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .cover h2 {
+            font-size: 24pt;
+            margin-bottom: 40px;
+        }
+        
+        .panda-icon {
+            font-size: 120pt;
+            margin: 30px 0;
+        }
+        
+        /* Страница слов */
+        .words-page h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .word-card {
+            background: #f9f0ff;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 2px solid #ba74ff;
+        }
+        
+        .word-illustration {
+            width: 80px;
+            height: 80px;
+            background: #e6ccff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36pt;
+        }
+        
+        .word-text {
+            flex: 1;
+        }
+        
+        .chinese {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #531dab;
+            margin-bottom: 5px;
+        }
+        
+        .pinyin {
+            font-size: 16pt;
+            color: #7a4a9e;
+            margin-bottom: 5px;
+        }
+        
+        .translation {
+            font-size: 16pt;
+            color: #333;
+        }
+        
+        /* Правило и схема */
+        .rule-page h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .rule-box {
+            background: #f0f7ff;
+            border: 2px solid #40a9ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .rule-title {
+            font-size: 18pt;
+            color: #1890ff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .rule-text {
+            font-size: 14pt;
+            line-height: 1.8;
+        }
+        
+        .scheme {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .scheme-title {
+            font-size: 18pt;
+            color: #7a4a9e;
+            margin-bottom: 20px;
+        }
+        
+        .direction-diagram {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            background: #f9f0ff;
+            border-radius: 50%;
+            border: 3px solid #ba74ff;
+        }
+        
+        .center-object {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: #7a4a9e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24pt;
+        }
+        
+        .direction-label {
+            position: absolute;
+            font-size: 16pt;
+            font-weight: bold;
+            color: #531dab;
+        }
+        
+        .top { top: 20px; left: 50%; transform: translateX(-50%); }
+        .bottom { bottom: 20px; left: 50%; transform: translateX(-50%); }
+        .left { left: 20px; top: 50%; transform: translateY(-50%); }
+        .right { right: 20px; top: 50%; transform: translateY(-50%); }
+        .top-left { top: 40px; left: 40px; }
+        .top-right { top: 40px; right: 40px; }
+        .bottom-left { bottom: 40px; left: 40px; }
+        .bottom-right { bottom: 40px; right: 40px; }
+        
+        /* Рабочие листы */
+        .worksheet h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .exercise {
+            margin-bottom: 25px;
+        }
+        
+        .exercise-title {
+            font-size: 16pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #531dab;
+        }
+        
+        .exercise-content {
+            background: #fafafa;
+            border: 2px dashed #d9d9d9;
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 150px;
+        }
+        
+        .matching {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .column {
+            background: #f9f0ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .column h4 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #7a4a9e;
+        }
+        
+        .item {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #ba74ff;
+        }
+        
+        /* Игра "Найди место" */
+        .game-page h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .scene-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .scene {
+            width: 500px;
+            height: 400px;
+            background: #e6f7ff;
+            border: 3px solid #40a9ff;
+            border-radius: 15px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scene-object {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #7a4a9e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24pt;
+        }
+        
+        .table { left: 200px; top: 300px; background: #deb887; }
+        .chair { left: 100px; top: 200px; background: #d2b48c; }
+        .box { left: 300px; top: 100px; background: #add8e6; }
+        .car { left: 400px; top: 200px; background: #ff6347; }
+        .tree { left: 450px; top: 50px; background: #228b22; border-radius: 50%; }
+        .house { left: 50px; top: 50px; background: #ff6b6b; }
+        
+        .instructions {
+            background: #f9f0ff;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #ba74ff;
+        }
+        
+        .instruction-item {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .instruction-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #7a4a9e;
+            font-size: 20pt;
+        }
+        
+        /* Лабиринт */
+        .maze-page h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .maze-container {
+            text-align: center;
+        }
+        
+        .maze {
+            width: 400px;
+            height: 400px;
+            background: #f0f7ff;
+            border: 3px solid #40a9ff;
+            border-radius: 15px;
+            margin: 0 auto;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+        }
+        
+        .maze-cell {
+            border: 1px solid #d9d9d9;
+        }
+        
+        .wall {
+            background: #7a4a9e;
+        }
+        
+        .start {
+            background: #52c41a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24pt;
+            color: white;
+        }
+        
+        .end {
+            background: #f5222d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24pt;
+            color: white;
+        }
+        
+        .maze-instructions {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16pt;
+            background: #f9f0ff;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ba74ff;
+        }
+        
+        /* Раскраска */
+        .coloring-page h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .coloring-container {
+            text-align: center;
+        }
+        
+        .coloring-scene {
+            width: 500px;
+            height: 400px;
+            background: #f9f0ff;
+            border: 3px solid #ba74ff;
+            border-radius: 15px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coloring-object {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 2px solid #d9d9d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24pt;
+        }
+        
+        .coloring-instructions {
+            margin-top: 20px;
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #40a9ff;
+        }
+        
+        /* Мини-комикс */
+        .comic-page h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .comic-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .comic-panel {
+            background: white;
+            border: 3px solid #7a4a9e;
+            border-radius: 15px;
+            padding: 15px;
+            height: 200px;
+            position: relative;
+        }
+        
+        .panel-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: #7a4a9e;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .panel-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .panel-text {
+            font-size: 14pt;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .panel-drawing {
+            flex: 1;
+            border: 2px dashed #d9d9d9;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        
+        /* Творческая работа */
+        .creative-page h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .creative-instructions {
+            background: #f9f0ff;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #ba74ff;
+            margin-bottom: 30px;
+            font-size: 16pt;
+            line-height: 1.8;
+        }
+        
+        .creative-area {
+            background: white;
+            border: 3px dashed #d9d9d9;
+            border-radius: 15px;
+            height: 300px;
+            padding: 20px;
+        }
+        
+        /* Ответы */
+        .answers-page h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7a4a9e;
+            font-size: 24pt;
+        }
+        
+        .answer-section {
+            margin-bottom: 25px;
+        }
+        
+        .answer-title {
+            font-size: 18pt;
+            color: #531dab;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ba74ff;
+            padding-bottom: 5px;
+        }
+        
+        .answer-content {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #40a9ff;
+        }
+        
+        /* Общие стили */
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Обложка -->
+    <div class="page cover">
+        <h1>方位词 (HSK1)</h1>
+        <h2>Рабочая тетрадь</h2>
+        <div class="panda-icon">🐼</div>
+        <p style="font-size: 18pt; margin-top: 30px;">Помоги панде расставить предметы!</p>
+    </div>
+    
+    <!-- Новые слова с иллюстрациями -->
+    <div class="page words-page">
+        <h2>Новые слова</h2>
+        <div class="word-grid">
+            <div class="word-card">
+                <div class="word-illustration">上</div>
+                <div class="word-text">
+                    <div class="chinese">上</div>
+                    <div class="pinyin">shàng</div>
+                    <div class="translation">на</div>
+                </div>
+            </div>
+            <div class="word-card">
+                <div class="word-illustration">下</div>
+                <div class="word-text">
+                    <div class="chinese">下</div>
+                    <div class="pinyin">xià</div>
+                    <div class="translation">под</div>
+                </div>
+            </div>
+            <div class="word-card">
+                <div class="word-illustration">左边</div>
+                <div class="word-text">
+                    <div class="chinese">左边</div>
+                    <div class="pinyin">zuǒbian</div>
+                    <div class="translation">слева</div>
+                </div>
+            </div>
+            <div class="word-card">
+                <div class="word-illustration">右边</div>
+                <div class="word-text">
+                    <div class="chinese">右边</div>
+                    <div class="pinyin">yòubian</div>
+                    <div class="translation">справа</div>
+                </div>
+            </div>
+            <div class="word-card">
+                <div class="word-illustration">前面</div>
+                <div class="word-text">
+                    <div class="chinese">前面</div>
+                    <div class="pinyin">qiánmiàn</div>
+                    <div class="translation">перед</div>
+                </div>
+            </div>
+            <div class="word-card">
+                <div class="word-illustration">后面</div>
+                <div class="word-text">
+                    <div class="chinese">后面</div>
+                    <div class="pinyin">hòumiàn</div>
+                    <div class="translation">за</div>
+                </div>
+            </div>
+            <div class="word-card">
+                <div class="word-illustration">旁边</div>
+                <div class="word-text">
+                    <div class="chinese">旁边</div>
+                    <div class="pinyin">pángbiān</div>
+                    <div class="translation">рядом</div>
+                </div>
+            </div>
+            <div class="word-card">
+                <div class="word-illustration">里</div>
+                <div class="word-text">
+                    <div class="chinese">里</div>
+                    <div class="pinyin">lǐ</div>
+                    <div class="translation">внутри</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Правило и схема -->
+    <div class="page rule-page">
+        <h2>Правило и схема</h2>
+        <div class="rule-box">
+            <div class="rule-title">Как использовать послелоги?</div>
+            <div class="rule-text">
+                <p>В китайском языке послелоги (方位词) используются после существительного для указания местоположения.</p>
+                <p><strong>Структура:</strong> [Существительное] + [Послелог]</p>
+                <p>Примеры:</p>
+                <p>• 桌子<strong>上</strong> (zhuōzi <strong>shàng</strong>) — на столе</p>
+                <p>• 椅子<strong>下</strong> (yǐzi <strong>xià</strong>) — под стулом</p>
+                <p>• 房子<strong>前面</strong> (fángzi <strong>qiánmiàn</strong>) — перед домом</p>
+            </div>
+        </div>
+        
+        <div class="scheme">
+            <div class="scheme-title">Схема расположения</div>
+            <div class="direction-diagram">
+                <div class="center-object">🏠</div>
+                <div class="direction-label top">前面</div>
+                <div class="direction-label bottom">后面</div>
+                <div class="direction-label left">左边</div>
+                <div class="direction-label right">右边</div>
+                <div class="direction-label top-left">上</div>
+                <div class="direction-label top-right">旁边</div>
+                <div class="direction-label bottom-left">里</div>
+                <div class="direction-label bottom-right">下</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Рабочий лист — Уровень 1 -->
+    <div class="page worksheet">
+        <h2>Рабочий лист — Уровень 1</h2>
+        <div class="exercise">
+            <div class="exercise-title">1. Сопоставьте китайские слова с их переводом:</div>
+            <div class="exercise-content">
+                <div class="matching">
+                    <div class="column">
+                        <h4>Китайский</h4>
+                        <div class="item">上</div>
+                        <div class="item">下</div>
+                        <div class="item">左边</div>
+                        <div class="item">右边</div>
+                    </div>
+                    <div class="column">
+                        <h4>Русский</h4>
+                        <div class="item">на</div>
+                        <div class="item">под</div>
+                        <div class="item">слева</div>
+                        <div class="item">справа</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">2. Заполните пропуски:</div>
+            <div class="exercise-content">
+                <p>把球放在桌子______。 (на)</p>
+                <p>把猫放在椅子______。 (под)</p>
+                <p>把书放在桌子______。 (слева)</p>
+                <p>把杯子放在桌子______。 (справа)</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Рабочий лист — Уровень 2 -->
+    <div class="page worksheet">
+        <h2>Рабочий лист — Уровень 2</h2>
+        <div class="exercise">
+            <div class="exercise-title">1. Переведите на китайский язык:</div>
+            <div class="exercise-content">
+                <p>Положи мяч под стул. → _________________________</p>
+                <p>Поставь книгу слева от стола. → _________________________</p>
+                <p>Помести чашку справа от стола. → _________________________</p>
+                <p>Положи игрушку на стол. → _________________________</p>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">2. Исправьте ошибки:</div>
+            <div class="exercise-content">
+                <p>把猫放在桌子下下。 → _________________________</p>
+                <p>把球放在椅子上上。 → _________________________</p>
+                <p>把书放在桌子左左边。 → _________________________</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Рабочий лист — Уровень 3 -->
+    <div class="page worksheet">
+        <h2>Рабочий лист — Уровень 3</h2>
+        <div class="exercise">
+            <div class="exercise-title">1. Составьте предложения:</div>
+            <div class="exercise-content">
+                <p>使用 / 把 / 熊猫 / 放在 / 箱子 / 里 → _________________________</p>
+                <p>把 / 鸟 / 放在 / 树 / 旁边 → _________________________</p>
+                <p>把 / 狗 / 放在 / 汽车 / 后面 → _________________________</p>
+                <p>把 / 人 / 放在 / 房子 / 前面 → _________________________</p>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">2. Напишите диалог:</div>
+            <div class="exercise-content">
+                <p>Представьте, что вы объясняете другу, где находятся предметы в комнате. Напишите диалог из 6 реплик.</p>
+                <p>A: ________________________________________________________</p>
+                <p>B: ________________________________________________________</p>
+                <p>A: ________________________________________________________</p>
+                <p>B: ________________________________________________________</p>
+                <p>A: ________________________________________________________</p>
+                <p>B: ________________________________________________________</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Игра «Найди место» -->
+    <div class="page game-page">
+        <h2>Игра «Найди место»</h2>
+        <div class="scene-container">
+            <div class="scene">
+                <div class="scene-object table">🪑</div>
+                <div class="scene-object chair">🪑</div>
+                <div class="scene-object box">📦</div>
+                <div class="scene-object car">🚗</div>
+                <div class="scene-object tree">🌳</div>
+                <div class="scene-object house">🏠</div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <div class="instruction-item">把熊猫放在箱子里。</div>
+            <div class="instruction-item">把狗放在汽车后面。</div>
+            <div class="instruction-item">把鸟放在树旁边。</div>
+            <div class="instruction-item">把人放在房子前面。</div>
+            <div class="instruction-item">把球放在椅子下面。</div>
+            <div class="instruction-item">把猫放在桌子上。</div>
+        </div>
+    </div>
+    
+    <!-- Лабиринт -->
+    <div class="page maze-page">
+        <h2>Лабиринт</h2>
+        <div class="maze-container">
+            <div class="maze">
+                <!-- Простой лабиринт 10x10 -->
+                <div class="maze-cell start">🐼</div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                
+                <div class="maze-cell"></div>
+                <div class="maze-cell wall"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell"></div>
+                <div class="maze-cell end">🏆</div>
+            </div>
+        </div>
+        <div class="maze-instructions">
+            Помоги панде пройти лабиринт! Используй слова: 上, 下, 左边, 右边.
+        </div>
+    </div>
+    
+    <!-- Раскраска с заданиями -->
+    <div class="page coloring-page">
+        <h2>Раскраска с заданиями</h2>
+        <div class="coloring-container">
+            <div class="coloring-scene">
+                <div class="coloring-object" style="left: 200px; top: 300px;">桌子</div>
+                <div class="coloring-object" style="left: 100px; top: 200px;">椅子</div>
+                <div class="coloring-object" style="left: 300px; top: 100px;">箱子</div>
+                <div class="coloring-object" style="left: 400px; top: 200px;">汽车</div>
+                <div class="coloring-object" style="left: 450px; top: 50px;">树</div>
+                <div class="coloring-object" style="left: 50px; top: 50px;">房子</div>
+                <div class="coloring-object" style="left: 250px; top: 350px;">球</div>
+                <div class="coloring-object" style="left: 150px; top: 250px;">猫</div>
+            </div>
+        </div>
+        
+        <div class="coloring-instructions">
+            <p>Раскрась предметы по заданию:</p>
+            <p>• Раскрась предмет, который находится <strong>на столе</strong> (桌子<strong>上</strong>) — красным цветом</p>
+            <p>• Раскрась предмет, который находится <strong>под стулом</strong> (椅子<strong>下</strong>) — синим цветом</p>
+            <p>• Раскрась предмет, который находится <strong>в коробке</strong> (箱子<strong>里</strong>) — зеленым цветом</p>
+            <p>• Раскрась предмет, который находится <strong>за машиной</strong> (汽车<strong>后面</strong>) — желтым цветом</p>
+            <p>• Раскрась предмет, который находится <strong>перед домом</strong> (房子<strong>前面</strong>) — оранжевым цветом</p>
+        </div>
+    </div>
+    
+    <!-- Мини-комикс -->
+    <div class="page comic-page">
+        <h2>Мини-комикс</h2>
+        <div class="comic-container">
+            <div class="comic-panel">
+                <div class="panel-number">1</div>
+                <div class="panel-content">
+                    <div class="panel-text">把熊猫放在箱子里。</div>
+                    <div class="panel-drawing"></div>
+                </div>
+            </div>
+            <div class="comic-panel">
+                <div class="panel-number">2</div>
+                <div class="panel-content">
+                    <div class="panel-text">把狗放在汽车后面。</div>
+                    <div class="panel-drawing"></div>
+                </div>
+            </div>
+            <div class="comic-panel">
+                <div class="panel-number">3</div>
+                <div class="panel-content">
+                    <div class="panel-text">把鸟放在树旁边。</div>
+                    <div class="panel-drawing"></div>
+                </div>
+            </div>
+            <div class="comic-panel">
+                <div class="panel-number">4</div>
+                <div class="panel-content">
+                    <div class="panel-text">太棒了！对了！</div>
+                    <div class="panel-drawing"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Творческая работа -->
+    <div class="page creative-page">
+        <h2>Творческая работа</h2>
+        <div class="creative-instructions">
+            <p>Представь, что ты дизайнер интерьера. Нарисуй комнату и расставь в ней мебель и предметы, используя все изученные послелоги.</p>
+            <p>Обязательно используй следующие конструкции:</p>
+            <p>• ...上 (на)</p>
+            <p>• ...下 (под)</p>
+            <p>• ...左边 (слева)</p>
+            <p>• ...右边 (справа)</p>
+            <p>• ...前面 (перед)</p>
+            <p>• ...后面 (за)</p>
+            <p>• ...旁边 (рядом)</p>
+            <p>• ...里 (внутри)</p>
+            <p>Подпиши каждый предмет на китайском языке!</p>
+        </div>
+        <div class="creative-area">
+            <!-- Место для рисования -->
+        </div>
+    </div>
+    
+    <!-- Ответы -->
+    <div class="page answers-page">
+        <h2>Ответы</h2>
+        
+        <div class="answer-section">
+            <div class="answer-title">Уровень 1</div>
+            <div class="answer-content">
+                <p><strong>1. Сопоставление:</strong> 上-на, 下-под, 左边-слева, 右边-справа</p>
+                <p><strong>2. Пропуски:</strong> 上, 下, 左边, 右边</p>
+            </div>
+        </div>
+        
+        <div class="answer-section">
+            <div class="answer-title">Уровень 2</div>
+            <div class="answer-content">
+                <p><strong>1. Перевод:</strong></p>
+                <p>• 把球放在椅子下。</p>
+                <p>• 把书放在桌子左边。</p>
+                <p>• 把杯子放在桌子右边。</p>
+                <p>• 把玩具放在桌子上。</p>
+                <p><strong>2. Исправление:</strong></p>
+                <p>• 把猫放在桌子下。</p>
+                <p>• 把球放在椅子上。</p>
+                <p>• 把书放在桌子左边。</p>
+            </div>
+        </div>
+        
+        <div class="answer-section">
+            <div class="answer-title">Уровень 3</div>
+            <div class="answer-content">
+                <p><strong>1. Предложения:</strong></p>
+                <p>• 把熊猫放在箱子里。</p>
+                <p>• 把鸟放在树旁边。</p>
+                <p>• 把狗放在汽车后面。</p>
+                <p>• 把人放在房子前面。</p>
+                <p><strong>2. Диалог:</strong> (примерный ответ)</p>
+                <p>A: Где книга? B: Книга на столе.</p>
+                <p>A: А чашка? B: Чашка справа от стола.</p>
+                <p>A: Где мяч? B: Мяч под стулом.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
